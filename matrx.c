@@ -5,8 +5,8 @@
 int main()
 {
     srand(time(NULL));
-    int a, b, c, d = 0, e = 0, f = 0, i, j, aa = 0, bb, cc = 0, dd = 0, ee = 0, frstchr;
-    int g[4][5], h[256][256], l[4][5], m[3][4];
+    int a, b, c, d = 0, e = 0, f = 0, i, j, aa = 0, bb, cc = 0, dd = 0, ee = 0, frstchr, eee = 0, fff = 0;
+    int g[4][5], h[256][256], l[4][5], m[3][4], lul[256][256];
 
     printf("MatrX is:\n");
 
@@ -135,6 +135,29 @@ int main()
         for(j = 0; j < cc; j++)
         {
             printf("%d ", h[i][j]);
+        }
+        printf("\n");
+    }
+
+    if(4 == bb)
+    {
+        for(i = 0; i < 3; i++)
+        {
+            for(j = 0; j < 4; j++)
+            {
+                lul[eee][fff] = lul[eee][fff] + m[i][j]*h[j][0];
+            }
+            eee++;
+        }
+    }
+
+    printf("\n");
+
+    for(i = 0; i < 3 ; i++)
+    {
+        for(j = 0; j < cc; j++)
+        {
+            printf("%d ", lul[i][j]);
         }
         printf("\n");
     }
