@@ -116,6 +116,13 @@ int main()
             case(','):
             {
                 i++;
+                if (i > 1)  /* Checking if the matrx is right */
+                    if (j != j2)
+                    {
+                        errr = 2;
+                        printf("\nMatrX is incorrect!");
+                        return -1;
+                    }
                 j2 = j;
                 j = 0;
                 break;
