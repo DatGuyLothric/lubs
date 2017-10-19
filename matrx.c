@@ -1,101 +1,107 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 int main()
 {
     srand(time(NULL));
-    int a, b, c, d = 0, e = 0, f = 0, i, j, aa = 0, bb, cc = 0, dd = 0, ee = 0, frstchr, eee=0, fff=0, aaa=0, k=0;
-    int g[4][5], h[256][256], l[4][5], m[3][4], lul[256][256];
+    int minelmnt, mini = 0, minj = 0, d = 0, i2 = 0, j2 = 0, i, j, brk = 0, frstchr, i3 = 0, j3 = 0, k2 = 0, k1 = 0, errr = 0;
+    int matrxa[4][5], matrxu[256][256], matrxb[4][5], matrxc[3][4], endmatrxf[256][256], endmatrxs[256][256];
 
-    printf("MatrX is:\n");
+    printf("Random MatrX (A) is:\n");
 
     for(i = 0; i < 4; i++)
     {
         for(j = 0; j < 5; j++)
         {
-            g[i][j] = rand();
-            l[i][j] = g[i][j];
-            printf("%d ", g[i][j]);
+            matrxa[i][j] = rand();
+            matrxb[i][j] = matrxa[i][j];
+            printf("%d ", matrxa[i][j]);
         }
         printf("\n");
     }
 
-    printf("New MatrX is:\n");
+    printf("\n");
+    printf("Changed MatrX (A) = MatrX (B) is:\n");
 
     for(j = 0; j < 5; j++)
     {
-        l[0][j] = g[3][4 - j];
+        matrxb[0][j] = matrxa[3][4 - j];
     }
 
     for(j = 0; j < 5; j++)
     {
-        l[3][j] = g[0][4 - j];
+        matrxb[3][j] = matrxa[0][4 - j];
     }
 
-    a = l[0][0];
+    minelmnt = matrxb[0][0];
 
     for(i = 0; i < 4; i++)
     {
         for(j = 0; j < 5; j++)
         {
-            if(a > l[i][j] & d != 1)
+            if(minelmnt > matrxb[i][j])
             {
-                a = l[i][j];
-                b = i;
-                c = j;
-                if(l[i][j] == 0)
-                {
-                    d = 1;
-                }
+                minelmnt = matrxb[i][j];
+                mini = i;
+                minj = j;
             }
-            printf("%d ", l[i][j]);
+            printf("%d ", matrxb[i][j]);
         }
         printf("\n");
     }
 
-    printf("New new MatrX is:\n");
+    printf("\n");
+    printf("MatrX (B) without string and column with min element = MatrX (C) is:\n");
 
     for(i = 0; i < 3; i++)
     {
         for(j = 0; j < 4; j++)
         {
-            if(e != b & f != c)
+            if(i2 != mini & j2 != minj)
             {
-                m[i][j] = l[e][f];
+                matrxc[i][j] = matrxb[i2][j2];
             }
             else
             {
-                if(e != b)
+                if(i2 != mini)
                 {
-                    f++;
-                    m[i][j] = l[e][f];
+                    j2++;
+                    matrxc[i][j] = matrxb[i2][j2];
                 }
                 else
                 {
-                    e++;
-                    m[i][j] = l[e][f];
+                    i2++;
+                    matrxc[i][j] = matrxb[i2][j2];
                 }
             }
-            f++;
+            j2++;
         }
-        e++;
-        f = 0;
+        i2++;
+        j2 = 0;
     }
 
     for(i = 0; i < 3; i++)
     {
         for(j = 0; j < 4; j++)
         {
-            printf("%d ", m[i][j]);
+            printf("%d ", matrxc[i][j]);
         }
         printf("\n");
     }
 
-    printf("Enter MatrX:\n");
+    printf("\n");
+    printf("Rules of entering MatrX:\n' ' - end of the element\n',' - end of the string\n'.' - end of the MatrX\n");
+    printf("\nExample:\nIf you enter:\n1 2 3 ,4 5 6 ,.\nYou will get:\n1 2 3\n4 5 6\n");
+
+    printf("\n");
+    printf("Enter your MatrX (U) defined on the set of integers:\n");
 
     i = 0;
     j = 0;
+    i2 = 0;
+    j2 = 0;
 
     do
     {
@@ -110,64 +116,123 @@ int main()
             case(','):
             {
                 i++;
-                cc = j;
+                j2 = j;
                 j = 0;
                 break;
             }
             case('.'):
             {
-                aa = 1;
-                bb = i;
+                brk = 1;
+                i2 = i;
                 break;
             }
             default:
             {
                 ungetc(frstchr, stdin);
-                scanf("%d", &h[i][j]);
+                if (scanf("%d", &matrxu[i][j]) != 1)
+                {
+                    errr = 1;
+                    printf("\nYou made a mistake. Please check what you entered.\nMake sure that you followed all the next rules:\nRules of entering MatrX:\n' ' - end of the element\n',' - end of the string\n'.' - end of the MatrX\n\n");
+                    brk = 1;
+                }
             }
         }
-    } while(aa != 1);
-
-    printf("Your MatrX is:\n");
-
-    for(i = 0; i < bb ; i++)
-    {
-        for(j = 0; j < cc; j++)
-        {
-            printf("%d ", h[i][j]);
-        }
-        printf("\n");
     }
+    while(brk != 1);
 
-    do
+    if (errr == 0)
     {
-        do
+        printf("\n");
+        printf("Your MatrX (U) is:\n");
+
+        for(i = 0; i < i2 ; i++)
         {
-            for(i = 0; i < 4; i++)
+            for(j = 0; j < j2; j++)
             {
-                lul[eee][fff] = lul[eee][fff] + m[k][i] * h[i][aaa];
+                printf("%d ", matrxu[i][j]);
             }
-            fff++;
-            aaa++;
+            printf("\n");
         }
-        while (fff <= cc);
-        fff = 0;
-        k++;
-        eee++;
-        aaa = 0;
-    }
-    while(eee < 3);
 
-    printf("Last MatrX is:\n");
-
-    for(i = 0; i < 3 ; i++)
-    {
-        for(j = 0; j < cc; j++)
-        {
-            printf("%d ", lul[i][j]);
-        }
         printf("\n");
+        printf("MatrX (C) * MatrX (U) = MatrX (E) is:\n");
+
+        if(i2 == 4)
+        {
+            do
+            {
+                do
+                {
+                    for(i = 0; i < 4; i++)
+                    {
+                        endmatrxf[i3][j3] = endmatrxf[i3][j3] + matrxc[k1][i] * matrxu[i][k2];
+                    }
+                    j3++;
+                    k2++;
+                }
+                while (j3 <= i2);
+                j3 = 0;
+                k1++;
+                i3++;
+                k2 = 0;
+            }
+            while(i3 < 3);
+
+            for(i = 0; i < 3 ; i++)
+            {
+                for(j = 0; j < j2; j++)
+                {
+                    printf("%d ", endmatrxf[i][j]);
+                }
+                printf("\n");
+            }
+        }
+        else
+            printf("MatrX (E) does not exist cause multiplication is not allowed\n");
+
+        printf("\n");
+        printf("MatrX (U) * MatrX (C) = MatrX (F) is:\n");
+
+        if(j2 == 3)
+        {
+            j3 = 0;
+            k1 = 0;
+            i3 = 0;
+            k2 = 0;
+
+            do
+            {
+                do
+                {
+                    for(i = 0; i < 4; i++)
+                    {
+                        endmatrxs[i3][j3] = endmatrxs[i3][j3] + matrxu[k1][i] * matrxc[i][k2];
+                    }
+                    j3++;
+                    k2++;
+                }
+                while (j3 <= i2);
+                j3 = 0;
+                k1++;
+                i3++;
+                k2 = 0;
+            }
+            while(i3 < 3);
+
+            for(i = 0; i < 3 ; i++)
+            {
+                for(j = 0; j < j2; j++)
+                {
+                    printf("%d ", endmatrxs[i][j]);
+                }
+                printf("\n");
+            }
+        }
+        else
+            printf("MatrX (F) does not exist cause multiplication is not allowed\n");
     }
+    else
+        return -1;
 
     return 0;
 }
