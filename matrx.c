@@ -11,7 +11,7 @@ int main()
 
     printf("Random MatrX (A) is:\n");
 
-    for(i = 0; i < 4; i++)
+    for(i = 0; i < 4; i++)  /* Creating random matrx */
     {
         for(j = 0; j < 5; j++)
         {
@@ -25,7 +25,7 @@ int main()
     printf("\n");
     printf("Changed MatrX (A) = MatrX (B) is:\n");
 
-    for(j = 0; j < 5; j++)
+    for(j = 0; j < 5; j++)  /* Changing elements */
     {
         matrxb[0][j] = matrxa[3][4 - j];
     }
@@ -37,7 +37,7 @@ int main()
 
     minelmnt = matrxb[0][0];
 
-    for(i = 0; i < 4; i++)
+    for(i = 0; i < 4; i++)  /* Searching for min element */
     {
         for(j = 0; j < 5; j++)
         {
@@ -55,7 +55,7 @@ int main()
     printf("\n");
     printf("MatrX (B) without string and column with min element = MatrX (C) is:\n");
 
-    for(i = 0; i < 3; i++)
+    for(i = 0; i < 3; i++)  /* Deleting string and column with min element */
     {
         for(j = 0; j < 4; j++)
         {
@@ -103,7 +103,7 @@ int main()
     i2 = 0;
     j2 = 0;
 
-    do
+    do  /* Function for entering matrx */
     {
         frstchr = getchar();
         switch(frstchr)
@@ -129,7 +129,7 @@ int main()
             default:
             {
                 ungetc(frstchr, stdin);
-                if (scanf("%d", &matrxu[i][j]) != 1)
+                if (scanf("%d", &matrxu[i][j]) != 1)    /* Function that checks if there are no letters in matrx */
                 {
                     errr = 1;
                     printf("\nYou made a mistake. Please check what you entered.\nMake sure that you followed all the next rules:\nRules of entering MatrX:\n' ' - end of the element\n',' - end of the string\n'.' - end of the MatrX\n\n");
@@ -157,9 +157,9 @@ int main()
         printf("\n");
         printf("MatrX (C) * MatrX (U) = MatrX (E) is:\n");
 
-        if(i2 == 4)
+        if(i2 == 4) /* Checking if we can do a multiplication */
         {
-            do
+            do  /* Function for matrxs's C and U multiplication */
             {
                 do
                 {
@@ -193,14 +193,14 @@ int main()
         printf("\n");
         printf("MatrX (U) * MatrX (C) = MatrX (F) is:\n");
 
-        if(j2 == 3)
+        if(j2 == 3) /* Checking if we can do a multiplication */
         {
             j3 = 0;
             k1 = 0;
             i3 = 0;
             k2 = 0;
 
-            do
+            do  /* Function for matrxs's U and C multiplication */
             {
                 do
                 {
