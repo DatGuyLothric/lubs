@@ -6,9 +6,8 @@ int main(int argc, char* argv[])
 {
     printf("\n");
     char* p;    /* This function checks if the string is not like "217863ghjg786dg" */
-    int arg = strtol(argv[1], &p, 10);
+    strtol(argv[1], &p, 10);
     int b = 0;
-    int i;
         if (*p != '\0' && *p != '.')
         {
             b = 1;
