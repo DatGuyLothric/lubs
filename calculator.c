@@ -19,7 +19,7 @@ float pop(void) /* Stack function pop */
     return stk[--i];
 };
 
-float push(float stkelmnt)  /* Stack function push */
+void push(float stkelmnt)  /* Stack function push */
 {
     stk[i++] = stkelmnt;
     chck++;
