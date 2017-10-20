@@ -6,7 +6,7 @@
 int main()
 {
     srand(time(NULL));
-    int minelmnt, mini = 0, minj = 0, d = 0, i2 = 0, j2 = 0, i, j, brk = 0, frstchr, i3 = 0, j3 = 0, k2 = 0, k1 = 0, errr = 0;
+    int minelmnt, mini = 0, minj = 0, i2 = 0, j2 = 0, i, j, brk = 0, frstchr, i3 = 0, j3 = 0, k2 = 0, k1 = 0, errr = 0;
     int matrxa[4][5], matrxu[256][256], matrxb[4][5], matrxc[3][4], endmatrxf[256][256], endmatrxs[256][256];
 
     printf("Random MatrX (A) is:\n");
