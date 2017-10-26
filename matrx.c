@@ -59,7 +59,7 @@ int main()
     {
         for(j = 0; j < 4; j++)
         {
-            if(i2 != mini & j2 != minj)
+            if(i2 != mini && j2 != minj)
             {
                 matrxc[i][j] = matrxb[i2][j2];
             }
