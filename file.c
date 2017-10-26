@@ -7,10 +7,8 @@ int main(int argc, char* argv[])
     printf("\n");
     char* p;    /* This function checks if the string is not like "217863ghjg786dg" */
     strtol(argv[1], &p, 10);
-    int b = 0;
         if (*p != '\0' && *p != '.')
         {
-            b = 1;
             printf("Error! You entered wrong data or entered nothing!\nEnter temperature you want to convert.\nExample: 36 C\n");
             printf("\n");
             return -1;
