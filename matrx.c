@@ -6,7 +6,7 @@
 int main()
 {
     srand(time(NULL));
-    int minelmnt, mini = 0, minj = 0, i2 = 0, j2 = 0, i, j, brk = 0, frstchr, i3 = 0, j3 = 0, k2 = 0, k1 = 0, errr = 0;
+    int minelmnt, mini = 0, minj = 0, i2 = 0, j2 = 0, i, j, brk = 0, frstchr, i3 = 0, j3 = 0, k2 = 0, k1 = 0, errr = 0, gl = 0, tp = 0, gp = 0, mp = 0;
     int matrxa[4][5], matrxu[256][256], matrxb[4][5], matrxc[3][4], endmatrxf[256][256], endmatrxs[256][256];
 
     printf("Random MatrX (A) is:\n");
@@ -110,7 +110,12 @@ int main()
         {
             case(' '):
             {
-                j++;
+                if ((matrxu[i][j] == 0 && gl == 1) || matrxu[i][j] != 0)
+                {
+                    j++;
+                    gl = 0;
+                    tp = 1;
+                }
                 break;
             }
             case(','):
@@ -125,12 +130,44 @@ int main()
                     }
                 j2 = j;
                 j = 0;
+                gp = 1;
                 break;
             }
             case('.'):
             {
-                brk = 1;
-                i2 = i;
+                if (gp == 1 && tp == 1 && mp == 1)
+                {
+                    brk = 1;
+                    i2 = i;
+                }
+                else
+                    if (mp != 1)
+                    {
+                        errr = 2;
+                        printf("\nMatrX is incorrect!");
+                        return -1;
+                    }
+                    else
+                    {
+                        errr = 1;
+                        printf("\nYou made a mistake. Please check what you entered.\nMake sure that you followed all the next rules:\nRules of entering MatrX:\n' ' - end of the element\n',' - end of the string\n'.' - end of the MatrX\n\n");
+                        brk = 1;
+                        return -1;
+                    }
+                break;
+            }
+            case('0'):
+            {
+                ungetc(frstchr, stdin);
+                if (scanf("%d", &matrxu[i][j]) != 1)    /* Function that checks if there are no letters in matrx */
+                {
+                    errr = 1;
+                    printf("\nYou made a mistake. Please check what you entered.\nMake sure that you followed all the next rules:\nRules of entering MatrX:\n' ' - end of the element\n',' - end of the string\n'.' - end of the MatrX\n\n");
+                    brk = 1;
+                    return -1;
+                }
+                if (matrxu[i][j] == 0)
+                    gl = 1;
                 break;
             }
             default:
@@ -141,7 +178,9 @@ int main()
                     errr = 1;
                     printf("\nYou made a mistake. Please check what you entered.\nMake sure that you followed all the next rules:\nRules of entering MatrX:\n' ' - end of the element\n',' - end of the string\n'.' - end of the MatrX\n\n");
                     brk = 1;
+                    return -1;
                 }
+                mp = 1;
             }
         }
     }
