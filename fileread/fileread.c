@@ -15,11 +15,11 @@ int main(int argc, char* argv[])
         }
         fseek(fp, 0, SEEK_END); /* Counting file size */
         s = ftell(fp);
-        printf("File size is %d bytes.", s);
+        printf("File size is %d bytes.\n", s);
     }
     else
     {
-        printf("Error! File can not be open!");
+        printf("Error! File can not be open!\n");
         return -1;
     }
     fclose(fp);
