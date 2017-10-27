@@ -6,7 +6,7 @@ int main(int argc, char* argv[])
 {
     FILE *fp;
     char c;
-    long s;
+    int s;
     if((fp = fopen(argv[1], "r")) != NULL) /* Checking if the file path is right */
     {
         while ((c = fgetc(fp)) != EOF) /* Display file symbols */
