@@ -73,6 +73,8 @@ int main()
                 else
                 {
                     i2++;
+                    if (minj == 0)
+                        j2++;
                     matrxc[i][j] = matrxb[i2][j2];
                 }
             }
@@ -168,6 +170,7 @@ int main()
                 }
                 if (matrxu[i][j] == 0)
                     gl = 1;
+                    mp = 1;
                 break;
             }
             default:
