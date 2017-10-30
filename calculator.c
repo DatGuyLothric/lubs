@@ -11,19 +11,9 @@ int blck = 0;
 int errr = 0;
 int chck = 0;
 
-float pop(void) /* Stack function pop */
-{
-    --chck;
-    if (chck < 0)   /* If there are no more elements in stack - Error! */
-        errr = 1;
-    return stk[--i];
-};
+float pop(void); /* Stack function pop */
 
-void push(float stkelmnt)  /* Stack function push */
-{
-    stk[i++] = stkelmnt;
-    chck++;
-};
+void push(float);  /* Stack function push */
 
 int main()
 {
@@ -110,3 +100,17 @@ int main()
         (blck != 1);
     return 0;
 }
+
+float pop(void) /* Stack function pop */
+{
+    --chck;
+    if (chck < 0)   /* If there are no more elements in stack - Error! */
+        errr = 1;
+    return stk[--i];
+};
+
+void push(float stkelmnt)  /* Stack function push */
+{
+    stk[i++] = stkelmnt;
+    chck++;
+};
