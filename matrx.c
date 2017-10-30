@@ -260,17 +260,17 @@ int main()
                     j3++;
                     k2++;
                 }
-                while (j3 <= i2);
+                while (j3 < 4);
                 j3 = 0;
                 k1++;
                 i3++;
                 k2 = 0;
             }
-            while(i3 < 3);
+            while(i3 <= i2);
 
-            for(i = 0; i < 3 ; i++)
+            for(i = 0; i < i2 ; i++)
             {
-                for(j = 0; j < j2; j++)
+                for(j = 0; j < 4; j++)
                 {
                     printf("%d ", endmatrxs[i][j]);
                 }
