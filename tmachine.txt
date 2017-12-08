@@ -1,11 +1,11 @@
 inc
 inc
 print
-* вывод 2
+* ГўГ»ГўГ®Г¤ 2
 movr
 get
 printc
-* вывод символа
+* ГўГ»ГўГ®Г¤ Г±ГЁГ¬ГўГ®Г«Г 
 movr
 inc
 inc
@@ -15,5 +15,5 @@ inc
 dec
 end
 print
-* вывод 0
+* ГўГ»ГўГ®Г¤ 0
 
