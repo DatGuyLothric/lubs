@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(/*int argc, char* argv[]*/)
+int main(int argc, char* argv[])
 {
     FILE *fp;
     int i = 0, b = 0, n = 1, s = 1, p = 2, t, g = 0, l = 0, k = 0;
@@ -13,7 +13,7 @@ int main(/*int argc, char* argv[]*/)
         w[b] = c;
         b++;
     }
-    if ((fp = fopen(/*argv[1]*/"c:/users/денис/desktop/3.txt", "r")) == NULL)
+    if ((fp = fopen(argv[1], "r")) == NULL)
     {
         printf("No file or incorrect path\n");
         return -1;
