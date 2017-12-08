@@ -5,7 +5,7 @@
 int main(int argc, char* argv[])
 {
     FILE *fp;
-    int i = 0, b = 0, n = 1, s = 1, p = 2, t, g = 0, l = 0, kk = 0;
+    int i = 0, b = 0, n = 1, s = 1, p = 2, t, g = 0, l = 0, k = 0;
     char c, w[1000], f[999999];
     printf("Enter word for search: ");
     while ((c = getchar()) != '\n')
