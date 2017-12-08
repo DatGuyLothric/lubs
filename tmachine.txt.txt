@@ -1,0 +1,19 @@
+inc
+inc
+print
+* גûגמה 2
+movr
+get
+printc
+* גûגמה סטלגמכא
+movr
+inc
+inc
+begin
+dec
+inc
+dec
+end
+print
+* גûגמה 0
+
