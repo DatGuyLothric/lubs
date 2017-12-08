@@ -5,12 +5,10 @@
 int main(int argc, char* argv[])
 {
     FILE *fp;
-    char c;
     int i, p = 0, pp = 0, ppp = 0, ii, mm;
-    int s;
     char words[1000][50];
     char begin[1000][50];
-    if ((fp = fopen("argv[1]", "r")) == NULL)
+    if ((fp = fopen(argv[1], "r")) == NULL)
     {
         printf("No file or incorrect path\n");
         return -1;
