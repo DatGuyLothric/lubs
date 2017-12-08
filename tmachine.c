@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     {
         for(i = 0; !feof(fp); i++)
         {
-            fscanf(fp, "%s", &words[i]);
+            fscanf(fp, "%s", &words[i][50]);
         }
     }
     fclose(fp);
