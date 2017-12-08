@@ -108,6 +108,7 @@ int main(int argc, char* argv[])
                             else
                                 if (strcmp(words[i], "get") == 0)
                                 {
+                                    printf("Enter symbol:");
                                     mm = getchar();
                                     ll[bb] = ll[bb] + mm;
                                     if (ll[bb] > 255)
