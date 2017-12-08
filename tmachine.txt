@@ -1,11 +1,11 @@
 inc
 inc
 print
-* âûâîä 2
+* output 2
 movr
 get
 printc
-* âûâîä ñèìâîëà
+* output symbol
 movr
 inc
 inc
@@ -15,5 +15,4 @@ inc
 dec
 end
 print
-* âûâîä 0
-
+* output 0
