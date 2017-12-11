@@ -8,7 +8,7 @@ int main()
     int i, ii, ii1, bb, jp, iw = 0, jwl = 1000, jwr = 0, l[1000], ll[1000], kk[1000], j, c[100], p = 0, num = 0, num1 = 0, j1, jv;
     char f[1000][1000], k[5], m[5];
     char d[10][10], n = '\n', cc;
-    if ((fp = fopen(/*argv[1]*/"c:/users/äåíèñ/desktop/find.txt", "r")) == NULL)
+    if ((fp = fopen(/*argv[1]*/"c:/users/денис/desktop/workout.txt", "r")) == NULL)
     {
         printf("No file or incorrect path\n");
         return -1;
@@ -148,12 +148,12 @@ int main()
                         cc = getchar();
                         ii1++;
                     }
-                    if (l[num1] = 10)
+                    if (l[num1] == 10)
                     {
-                        if (ll[num1] = 10)
+                        if (ll[num1] == 10)
                         {
                             jv = 4;
-                            f[(kk[num1]/1000)+1][kk[num1]%1000-3] = '/';
+                            f[(kk[num1]/1000)+1][kk[num1]%1000-4] = '/';
                             while (ii > -1)
                             {
                             f[(kk[num1]/1000)+2][kk[num1]%1000-jv] = k[ii];
@@ -163,6 +163,7 @@ int main()
                             kk[num] = ((kk[num1]/1000)+2)*1000 + (kk[num1]%1000-4);
                             l[num] = 10;
                             ll[num] = 10;
+                            ll[num1] = 11;
                             if (iw < ((kk[num1]/1000)+2))
                                 iw = ((kk[num1]/1000)+2);
                             if (jwl > (kk[num1]%1000-jv))
@@ -171,7 +172,7 @@ int main()
                         else
                         {
                             jv = 0;
-                            f[(kk[num1]/1000)+1][kk[num1]%1000] = '|';
+                            f[(kk[num1]/1000)+1][kk[num1]%1000-1] = '|';
                             while (ii > -1)
                             {
                             f[(kk[num1]/1000)+2][kk[num1]%1000-jv] = k[ii];
@@ -189,10 +190,10 @@ int main()
                     }
                     else
                     {
-                        if (ll[num1] = 10)
+                        if (ll[num1] == 10)
                         {
                             jv = 0;
-                            f[(kk[num1]/1000)+1][kk[num1]%1000] = '|';
+                            f[(kk[num1]/1000)+1][kk[num1]%1000+1] = '|';
                             while (ii > -1)
                             {
                             f[(kk[num1]/1000)+2][kk[num1]%1000+jv] = k[ii];
@@ -200,8 +201,9 @@ int main()
                             jv++;
                             }
                             kk[num] = ((kk[num1]/1000)+2)*1000 + (kk[num1]%1000);
-                            l[num] = 10;
+                            l[num] = 11;
                             ll[num] = 10;
+                            ll[num1] = 11;
                             if (iw < ((kk[num1]/1000)+2))
                                 iw = ((kk[num1]/1000)+2);
                             if (jwr < (kk[num1]%1000+jv))
@@ -210,7 +212,7 @@ int main()
                         else
                         {
                             jv = 4;
-                            f[(kk[num1]/1000)+1][kk[num1]%1000+3] = 92;
+                            f[(kk[num1]/1000)+1][kk[num1]%1000+4] = 92;
                             while (ii > -1)
                             {
                             f[(kk[num1]/1000)+2][kk[num1]%1000+jv] = k[ii];
@@ -218,7 +220,7 @@ int main()
                             jv++;
                             }
                             kk[num] = ((kk[num1]/1000)+2)*1000 + (kk[num1]%1000+4);
-                            l[num] = 10;
+                            l[num] = 11;
                             ll[num] = 10;
                             if (iw < ((kk[num1]/1000)+2))
                                 iw = ((kk[num1]/1000)+2);
@@ -252,7 +254,7 @@ int main()
         printf("\n");
     }*/
     j = 0;
-    if ((fp = fopen("c:/users/äåíèñ/desktop/find.txt", "w")) == NULL)
+    if ((fp = fopen("c:/users/денис/desktop/workout.txt", "w")) == NULL)
         printf("error\n");
     else
     {
