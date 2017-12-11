@@ -8,7 +8,7 @@ int main()
     int i, ii, ii1, bb, jp, iw = 0, jwl = 1000, jwr = 0, l[1000], ll[1000], kk[1000], j, c[100], p = 0, num = 0, num1 = 0, j1, jv;
     char f[1000][1000], k[5], m[5];
     char d[10][10], n = '\n', cc;
-    if ((fp = fopen(/*argv[1]*/"c:/users/δενθρ/desktop/find.txt", "r")) == NULL)
+    if ((fp = fopen(/*argv[1]*/"c:/users/Γ€Γ₯Γ­Γ¨Γ±/desktop/find.txt", "r")) == NULL)
     {
         printf("No file or incorrect path\n");
         return -1;
@@ -252,7 +252,7 @@ int main()
         printf("\n");
     }*/
     j = 0;
-    if ((fp = fopen("c:/users/δενθρ/desktop/find.txt", "w")) == NULL)
+    if ((fp = fopen("c:/users/Γ€Γ₯Γ­Γ¨Γ±/desktop/find.txt", "w")) == NULL)
         printf("error\n");
     else
     {
