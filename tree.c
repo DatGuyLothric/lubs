@@ -247,7 +247,7 @@ int main(int argc, char* argv[])
         }
     }
     j = 0;
-    if ((fp = fopen("c:/users/денис/desktop/workout.txt", "w")) == NULL)
+    if ((fp = fopen(argv[1], "w")) == NULL)
         printf("error\n");
     else
     {
