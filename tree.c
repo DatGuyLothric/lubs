@@ -2,13 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main()
+int main(int argc, char* argv[])
 {
     FILE *fp;
     int i, ii, ii1, bb, jp, iw = 0, jwl = 1000, jwr = 0, l[1000], ll[1000], kk[1000], j, c[100], p = 0, num = 0, num1 = 0, j1, jv;
     char f[1000][1000], k[5], m[5];
-    char d[10][10], n = '\n', cc;
-    if ((fp = fopen(/*argv[1]*/"c:/users/денис/desktop/workout.txt", "r")) == NULL)
+    char n = '\n', cc;
+    if (c[100] == 10)
+        m[5] = 'l';
+    if (m[5] == 'l')
+        c[100] = 0;
+    if ((fp = fopen(argv[1], "r")) == NULL)
     {
         printf("No file or incorrect path\n");
         return -1;
@@ -242,17 +246,6 @@ int main()
             }
         }
     }
-    /*for (i = 0; i < 10; i++)
-    {
-        for (j = 0; j < 10; j++)
-            d[i][j] = ' ';
-    }
-    /*for (i = 0; i < 10; i++)
-    {
-        for (j = 0; j < 10; j++)
-            printf("%c ", d[i][j]);
-        printf("\n");
-    }*/
     j = 0;
     if ((fp = fopen("c:/users/денис/desktop/workout.txt", "w")) == NULL)
         printf("error\n");
