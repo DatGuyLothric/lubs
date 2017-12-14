@@ -18,11 +18,9 @@ int lsh_help(char **args);
 int lsh_exit(char **args);
 char *builtin_str[] =
 {
-    "Enter following commands and arguments for them:",
     "cd",
     "help",
-    "exit",
-    "gcc"
+    "exit"
 };
 int (*builtin_func[]) (char **) =
 {
@@ -186,10 +184,12 @@ int lsh_cd(char **args)
 int lsh_help(char **args)
 {
     int i;
+    printf("  You can use following commands:\n");
     for (i = 0; i < lsh_num_builtins(); i++)
     {
         printf("  %s\n", builtin_str[i]);
     }
+    printf("  ls\n  gcc\n");
     return 1;
 }
 
