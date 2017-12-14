@@ -185,11 +185,11 @@ int lsh_help(char **args)
 {
     int i;
     printf("  You can use following commands:\n");
+    printf("  ls\n  gcc\n");
     for (i = 0; i < lsh_num_builtins(); i++)
     {
         printf("  %s\n", builtin_str[i]);
     }
-    printf("  ls\n  gcc\n");
     return 1;
 }
 
