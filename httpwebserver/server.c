@@ -14,7 +14,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#define PORT 8080
 #define LISTENQ 10
 
 int list_s;
@@ -43,7 +42,7 @@ int recordTotalBytes(int bytes_sent, sharedVariables *mempointer); /* total data
 int main(int argc, char *argv[])
 {
     int conn_s;
-    short int port = PORT;
+    short int port = atof(argv[1]);
     struct sockaddr_in servaddr;
     (void) signal(SIGINT, cleanup);
     if ((list_s = socket(AF_INET, SOCK_STREAM, 0)) < 0 ) /* creating list soc */
