@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <conio.h>
 #include <unistd.h>
+#include <pthread.h>
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
@@ -205,10 +207,10 @@ httpRequest parseRequest(char *msg)
     int rer = 0;
     while (1)
     {
-        sym = fgetc(filename);
+        sym = fgetc(exists);
         if (sym == EOF)
         {
-            if (feof(filename) == 0)
+            if (feof(exists) == 0)
             {
                 rer = 1;
                 break;
