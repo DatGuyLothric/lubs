@@ -183,7 +183,7 @@ char *getFileName(char *msg)
         exit(EXIT_FAILURE);
     }
     char *page = "page";
-    strcpy(base, ph);
+    strcpy(base, page);
     strcat(base, file);
     free(file);
     return base;
