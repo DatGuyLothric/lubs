@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <conio.h>
 #include <unistd.h>
 #include <pthread.h>
 #include <sys/socket.h>
