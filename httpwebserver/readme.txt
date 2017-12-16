@@ -1,3 +1,7 @@
 Very simple http web server.
-Launch: 
+Compile: 
 > gcc server.c -lrt -o server
+Launch:
+> ./server [port]
+Example:
+> ./server 8080
