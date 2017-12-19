@@ -5,126 +5,133 @@
 int main(int argc, char* argv[])
 {
     FILE *fp;
-    int i, p = 0, pp = 0, ppp = 0, ii, mm;
+    int i, j = 0, j2 = 0, j3 = 0, i2, char_el, check = 0, i3 = 0;
     char words[1000][50];
     char begin[1000][50];
-    if ((fp = fopen(argv[1], "r")) == NULL)
+    if ((fp = fopen(argv[1], "r")) == NULL) /* Checking if the file exists */
     {
         printf("No file or incorrect path\n");
         return -1;
     }
     else
     {
-        for(i = 0; !feof(fp); i++)
+        for(i = 0; !feof(fp); i++)  /* Read commands */
         {
             fscanf(fp, "%s", &words[i][50]);
         }
     }
     fclose(fp);
-    int r = i;
-    int bbmx = 10000, bbmn = 10000;
-    int bb = 10000;
-    int ll[bb];
-    ll[10000] = 0;
-    ll[0] = 0;
-    for(i = 0; i <= r; i++)
+    int size = i;
+    int nummx = 10000, nummn = 10000;
+    int num = 10000;
+    int elem[num];
+    elem[10000] = 0;
+    elem[0] = 0;
+    for(i = 0; i <= size; i++)
     {
-        if (strcmp(words[i], "inc") == 0)
+        if (check != 0) /* Correction of begin func */
         {
-            ll[bb]++;
-            if (ll[bb] > 255)
+            --check;
+        }
+        else
+        if (strcmp(words[i], "inc") == 0)   /* Incr element */
+        {
+            elem[num]++;
+            if (elem[num] > 255)
             {
                 printf("Error! The value is more than 255!");
-                ll[bb] = 0;
+                elem[num] = 0;
             }
-            else if (ll[bb] < 0)
+            else if (elem[num] < 0)
             {
                 printf("Error! The value is less then 0!");
-                ll[bb] = 0;
+                elem[num] = 0;
             }
         }
         else
-            if (strcmp(words[i], "dec") == 0)
+            if (strcmp(words[i], "dec") == 0)   /* Decr element */
             {
-                --ll[bb];
-                if (ll[bb] > 255)
+                --elem[num];
+                if (elem[num] > 255)
                 {
                     printf("Error! The value is more than 255!");
-                    ll[bb] = 0;
+                    elem[num] = 0;
                 }
-                else if (ll[bb] < 0)
+                else if (elem[num] < 0)
                 {
                     printf("Error! The value is less then 0!");
-                    ll[bb] = 0;
+                    elem[num] = 0;
                 }
             }
             else
-                if (strcmp(words[i], "movl") == 0)
+                if (strcmp(words[i], "movl") == 0)  /* Checking left element and going to it */
                 {
-                    --bb;
-                    if (bb < bbmn)
+                    --num;
+                    if (num < nummn)
                     {
-                        bbmn = bb;
-                        ll[bb] = 0;
+                        nummn = num;
+                        elem[num] = 0;
                     }
                 }
                 else
-                    if (strcmp(words[i], "movr") == 0)
+                    if (strcmp(words[i], "movr") == 0)  /* Checking right element and going to it */
                         {
-                        bb++;
-                        if (bb > bbmx)
+                        num++;
+                        if (num > nummx)
                             {
-                                bbmx = bb;
-                                ll[bb] = 0;
+                                nummx = num;
+                                elem[num] = 0;
                             }
                         }
                     else
-                        if (strcmp(words[i], "print") == 0)
-                            printf("%d\n", ll[bb]);
+                        if (strcmp(words[i], "print") == 0) /* Print element */
+                            printf("%d\n", elem[num]);
                         else
-                            if (strcmp(words[i], "begin") == 0)
+                            if (strcmp(words[i], "begin") == 0) /* Begin func */
                             {
-                                p = pp++;
-                                ppp = p;
-                                while (strcmp(words[i], "end") != 0)
+                                i3 = i;
+                                j = j2++;
+                                j3 = j;
+                                while (strcmp(words[i3], "end") != 0)
                                 {
-                                    memcpy (begin[p], words[i], sizeof(begin[p]));
-                                    p++;
-                                    i++;
+                                    memcpy (begin[j], words[i3], sizeof(begin[j])); /* Copying begin end commands */
+                                    j++;
+                                    i3++;
+                                    check++;
                                 };
-                                pp = p;
-                                while (ll[bb] != 0)
+                                j2 = j;
+                                while (elem[num] != 0)  /* Doing begin end commands */
                                 {
-                                    for (ii = ppp; ii <= pp; ii++)
+                                    for (i2 = j3; i2 <= j2; i2++)
                                     {
-                                        if (strcmp(begin[ii], "inc") == 0)
-                                            ll[bb]++;
+                                        if (strcmp(begin[i2], "inc") == 0)
+                                            elem[num]++;
                                         else
-                                            if (strcmp(begin[ii], "dec") == 0)
-                                                --ll[bb];
+                                            if (strcmp(begin[i2], "dec") == 0)
+                                                --elem[num];
                                     }
                                 };
                             }
                             else
-                                if (strcmp(words[i], "get") == 0)
+                                if (strcmp(words[i], "get") == 0)   /* Getting symbol element */
                                 {
                                     printf("Enter symbol:");
-                                    mm = getchar();
-                                    ll[bb] = ll[bb] + mm;
-                                    if (ll[bb] > 255)
+                                    char_el = getchar();
+                                    elem[num] = elem[num] + char_el;
+                                    if (elem[num] > 255)
                                     {
                                         printf("Error! The value is more than 255!");
-                                        ll[bb] = 0;
+                                        elem[num] = 0;
                                     }
-                                    else if (ll[bb] < 0)
+                                    else if (elem[num] < 0)
                                     {
                                         printf("Error! The value is less then 0!");
-                                        ll[bb] = 0;
+                                        elem[num] = 0;
                                     }
                                 }
                                 else
                                     if (strcmp(words[i], "printc") == 0)
-                                        printf("%c\n", ll[bb]);
+                                        printf("%c\n", elem[num]);  /* Printing element as symbol */
     }
     return 0;
 }
