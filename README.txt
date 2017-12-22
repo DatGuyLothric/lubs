@@ -8,5 +8,6 @@ lshell.c - very simple shell;
 matrx.c - matrx multiplication;
 tmachine.c - Turing machine, working on cfg file;
 tree.c - very very bad c programm (i'm serious, don't look at it, i mean, it's beta, it's not done yet!!!)
+server.c - HAHAHAAHAHAHAHAHAH, Oh God, HAHAHAAHAHAHAHAHAH
 
 2017
